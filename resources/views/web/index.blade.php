@@ -17,14 +17,14 @@
     <div class="item active">
       <img src="/img/slide01.png">
       <div class="carousel-caption">
-        <h2>Lorem ipsum</h2>
+        <h2><img src="/img/logo.png" class="img-responsive"></h2>
         <p>Dolor sit amet</p>
       </div>
     </div>
     <div class="item">
       <img src="/img/slide02.png">
       <div class="carousel-caption">
-        <h2>Lorem ipsum</h2>
+        <h2><img src="/img/logo.png" class="img-responsive"></h2>
         <p>Dolor sit amet</p>
       </div>
     </div>
