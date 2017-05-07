@@ -37,5 +37,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //mis rutas
 Route::match(['get', 'post'], 'contact', 'WebController@contact');
+Route::get('staff', 'WebController@staff');
+Route::get('my', 'WebController@my');
+Route::get('my/planes', 'WebController@planes');
+Route::get('my/consultas', 'WebController@visitas');
+Route::get('prices', 'WebController@prices');
 Route::get('{category}/{slug}', 'WebController@page')->where('category', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 Route::get('{slug}', 'WebController@category')->where('slug', '[a-z,0-9-]+');

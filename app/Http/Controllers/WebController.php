@@ -39,11 +39,11 @@ class WebController extends Controller
     public function page($category, $slug)
     {
         $page = Page::where('slug', $slug)->firstOrFail();
-
+        $lastNews = Page::where('tags', 'LIKE', '%noticia%')->limit(6)->orderByRaw("RAND()")->get();
         if (view()->exists('web.page-cat-'.$category)) {
-            return view('web/page-cat-'.$category, compact('page', 'blocks'));
+            return view('web/page-cat-'.$category, compact('page', 'lastNews'));
         } else {
-            return view('web/page', compact('page', 'blocks'));
+            return view('web/page', compact('page', 'lastNews'));
         }
     }
     // Send email
