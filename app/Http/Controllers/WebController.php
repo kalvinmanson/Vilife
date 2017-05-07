@@ -9,7 +9,6 @@ use Auth;
 use Storage;
 use File;
 use App\Category;
-use App\Field;
 use App\Page;
 use App\Picture;
 use App\User;
@@ -21,14 +20,14 @@ class WebController extends Controller
     //home
     public function index()
     {
-        return view('web/index');
+        $lastNews = Page::where('tags', 'LIKE', '%noticia%')->limit(6)->orderBy('created_at', 'desc')->get();
+        return view('web/index', compact('lastNews'));
     }
      //Show category
     public function category($slug)
     {
-        $country = $this->country();
         $category = Category::where('slug', $slug)->firstOrFail();
-        $pages = Page::where('category_id', $category->id)->where('country', $country)->orderBy('created_at', 'desc')->paginate(6);
+        $pages = Page::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(6);
 
         if (view()->exists('web/category-'.$slug)) {
             return view('web/category-'.$slug, compact('category', 'pages', 'blocks'));
@@ -39,7 +38,6 @@ class WebController extends Controller
     //Show Page
     public function page($category, $slug)
     {
-        $country = $this->country();
         $page = Page::where('slug', $slug)->firstOrFail();
 
         if (view()->exists('web.page-cat-'.$category)) {

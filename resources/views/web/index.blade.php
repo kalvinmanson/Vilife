@@ -40,4 +40,21 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div class="row">
+  <div class="col-sm-8">
+    <h3>Actualidad en nutrición</h3>
+    <div class="row">
+      @foreach($lastNews as $lastNew)
+      <div class="col-sm-6">
+        <h2>{{ $lastNew->name }}</h2>
+        <img src="/t.php?src={{ $lastNew->picture }}&w=600&h=300" class="img-responsive">
+        <p>{{ substr(strip_tags($lastNew->content), 0, 100) }}</p>
+        <a href="/{{ $lastNew->category->slug }}/{{ $lastNew->slug }}" class="btn btn-xs btn-info">Leer mas..</a>
+      </div>
+      @endforeach
+    </div>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
 @endsection
