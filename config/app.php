@@ -147,6 +147,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
     ],
 
