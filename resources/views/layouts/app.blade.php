@@ -11,6 +11,7 @@
     {!! Html::style('css/jquery.fancybox.css') !!}
     {!! Html::style('css/font-awesome.min.css') !!}
     {!! Html::style('css/animations.css') !!}
+    {!! Html::style('css/bootstrap-tagsinput.css') !!}
     {!! Html::style('css/app.css') !!}
     
 </head>
@@ -74,7 +75,8 @@
 	{!! Html::script('js/bootstrap.min.js') !!}
 	{!! Html::script('js/bootstrap3-typeahead.min.js') !!}
 	{!! Html::script('js/css3-animate-it.js') !!}
-	{!! Html::script('js/jquery.fancybox.pack.js') !!}
+  {!! Html::script('js/jquery.fancybox.pack.js') !!}
+  {!! Html::script('js/bootstrap-tagsinput.min.js') !!}
 	{!! Html::script('js/main.js') !!}
 </body>
 </html>

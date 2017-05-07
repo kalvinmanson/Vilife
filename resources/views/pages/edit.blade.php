@@ -3,8 +3,7 @@
 @section('content')
 
 <h1>Edit Page</h1>
-<div class="row">
-	<div class="col-sm-9">
+
 		<form method="POST" action="{{ url('admin/pages/' . $page->id) }}">
 
 			@include('partials.errors')
@@ -29,7 +28,10 @@
 					</div>
 				</div>
 				<div class="col-sm-6">
-					
+					<div class="form-group">
+						<label for="picture">Imagen</label>
+						<input name="picture" id="picture" type="text" class="form-control ckfile" readonly value="{{ old('picture') ? old('picture') : $page->picture }}">	
+					</div>
 				</div>
 			</div>
 			<div class="form-group">
@@ -39,14 +41,37 @@
 					var editor = CKEDITOR.replace('content');
 				</script>
 			</div>
+			<div class="form-group">
+				<label for="tags">Tags</label>
+				<input type="text" name="tags" id="tags" class="form-control" data-role="tagsinput" value="{{ old('tags') ? old('tags') : $page->tags }}">
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<label>
+							<input type="hidden" name="suscribe" value="0">
+							<input type="checkbox" name="suscribe" value="1" {{ $page->suscribe == true ? 'checked' : ''}}> Para suscriptores
+						</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<label>
+							<input type="hidden" name="premium" value="0">
+							<input type="checkbox" name="premium" value="1" {{ $page->premium == true ? 'checked' : ''}}> Para premium
+						</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+
+			</div>
 			<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 			<input type="hidden" name="_method" value="PUT" id="token">
 			<button type="submit" class="btn btn-primary">Save</button>
 		</form>
-	</div>
-	<div class="col-sm-3">
-	</div>
-</div>
+	
 {!! Form::open([
     'method' => 'DELETE',
     'route' => ['admin.pages.destroy', $page->id]
