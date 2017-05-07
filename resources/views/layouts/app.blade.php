@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Drodmin - @yield('title')</title>
+	<title>ViLife - @yield('title')</title>
 	<meta name="keywords" content="@yield('meta-keywords')">
     <meta name="description" content="@yield('meta-keywords')">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 <body>
 	<header>
 	<nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Victorious</a>
+      <a class="navbar-brand" href="/">ViLife</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,18 +39,19 @@
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::user())
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Mi perfil <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/">Mis Valoraciones</a></li>
+            <li><a href="/">Historia Clinica</a></li>
             <li><a href="/">Planes de Alimentación</a></li>
             <li><a href="/">Consultas</a></li>
+            <li><a href="/">Visitas</a></li>
             <li><a href="/auth/logout">Salir</a></li>
           </ul>
         </li>
         @else
-        <li><a href="#">Planes y Precios</a></li>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/auth/register">Register</a></li>
+        <li class="active"><a href="#">Planes y Precios</a></li>
+        <li><a href="/auth/login">Entrar</a></li>
+        <li><a href="/auth/register">Crear Cuenta</a></li>
         @endif
       </ul>
     </div><!-- /.navbar-collapse -->

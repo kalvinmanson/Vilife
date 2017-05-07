@@ -1,0 +1,152 @@
+Users *
+	-email*
+	-role*
+	-name*
+	-slug*
+	-picture
+	-document
+	-birthdate
+	-gender*
+	-ocupation
+	-country
+	-city
+	-address
+	-phone
+	-movil
+	-bio
+	-cv
+	-rank
+	-location
+	-subscription
+
+
+Profiles
+	-user_id
+	-profesional_id
+	-peso_actual
+	-estatura
+	-imc
+	-actividad_fisica
+	-cir_cintura
+	-cir_brazo
+	-pl_biceps
+	-pl_triceps
+	-pl_subescapular
+	-pl_suprailiaco
+	-pl_abdominal
+	-pl_muslo
+	-pl_pantorrilla
+	-complementos
+	-aversiones
+	-diagnostico
+	-concepto
+	-manejo
+
+--Meterings
+	-user_id
+	-peso
+
+--Pathologies
+	-user_id
+	-name
+	-dx_date
+	-controlled
+
+--Allergies
+	-user_id
+	-name
+
+--Intolerances
+	-user_id
+	-name
+
+--Surgicals **
+	-user_id
+	-name
+	-qx_date
+
+--Medicines **
+	-user_id
+	-name
+	-dosis
+
+--Laboratories
+	-user_id
+	-name
+	-valor
+
+--Diaries
+	-user_id
+	-profesional_id
+	-comida
+	-hora
+	-alimento
+	-preparacion
+	-cantidad
+	-kcal
+	-chos
+	-grasa
+	-proteina
+
+--Visits++
+	-user_id
+	-profesional_id
+	-visit_date
+	-adress
+	-status
+	-cost
+	-comments
+
+Tickets++
+	-user_id
+	-name
+	-content
+	-status
+
+Replies++
+	-ticket_id
+	-user_id
+	-profesional_id
+	-content
+	-rank
+
+Plans ++
+	-user_id
+	-profesional_id
+	-frutas
+	-verdura
+	-lacteos_a
+	-lacteos_b
+	-carnes
+	-leguminosas
+	-cereales
+	-grasas
+	-azucares
+	-requerimiento
+	-comentarios
+
+Pages  **
+	-categoy_id*
+	-name*
+	-slug*
+	-picture*
+	-content*
+	-tags*
+	-suscribe*
+	-premium*
+	-rank*
+	-for_patient
+	-for_profesional
+
+Comments **
+	-user_id
+	-page_id
+	-content
+
+Payments **
+	-user_id
+	-service
+	-cost
+	-tax
+	-total
+	-status

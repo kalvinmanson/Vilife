@@ -16,10 +16,16 @@ class CreatePagesTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->integer('country_id')->default(0);
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('picture');
             $table->text('content');
+            $table->string('tags');
+            $table->boolean('suscribe')->default(false);
+            $table->boolean('premium')->default(false);
+            $table->float('rank')->default(0);
+            $table->boolean('for_patient')->default(true);
+            $table->boolean('for_profesional')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

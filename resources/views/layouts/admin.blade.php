@@ -18,13 +18,11 @@
 <body>
 	<header>
 		<div class="container">
-			<ul class="nav navbar-nav navbar-inverse">
+			<ul class="nav navbar-nav">
 				<li><a href="/">Drodmin v4</a>
 				<li><a href="{{ url('admin/pages') }}">Pages</a></li>
 				<li><a href="{{ url('admin/categories') }}">Cetegories</a></li>
-				<li><a href="{{ url('admin/menus') }}">Menús</a></li>
 				<li><a href="{{ url('admin/users') }}">Users</a></li>
-				<li><a href="{{ url('admin/countries') }}">Countries</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="{{ url('auth/logout') }}"><i class="fa fa-power-off"></i></a></li>

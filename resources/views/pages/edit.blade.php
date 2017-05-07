@@ -29,14 +29,7 @@
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="form-group">
-						<label for="country_id">Country</label>
-						<select name="country_id" id="country_id" class="form-control">
-							@foreach ($countries as $country)
-							<option value="{{ $country->id }}" {{ $country->id == $page->country_id ? 'selected' : '' }}>{{ $country->name. " (" .$country->domain. ")" }}</option>
-							@endforeach
-						</select>
-					</div>
+					
 				</div>
 			</div>
 			<div class="form-group">
@@ -52,7 +45,6 @@
 		</form>
 	</div>
 	<div class="col-sm-3">
-		@include('partials.pages_fields')
 	</div>
 </div>
 {!! Form::open([

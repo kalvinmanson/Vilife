@@ -17,14 +17,6 @@
 				@endforeach
 			</select>
 		</div>
-		<div class="form-group">
-			<select name="q_country" class="form-control">
-				<option value="all">All Countries</option>
-				@foreach ($countries as $country)
-				<option value="{{ $country->id }}" {{ $country->id == $q_country ? 'selected' : '' }}>{{ $country->name. " (" .$country->domain. ")" }}</option>
-				@endforeach
-			</select>
-		</div>
 	  <div class="input-group">
 	    <input name="q" id="q" type="text" class="form-control" placeholder="Search for..." value="{{ $q }}">
 	    <span class="input-group-btn">
@@ -41,7 +33,6 @@
 		<th width="20">ID</th>
 		<th>Name</th>
 		<th width="150">Category</th>
-		<th width="30">Country</th>
 		<th width="250">TimeStamps</th>
 	</tr>
 	@foreach ($pages as $page)
@@ -53,7 +44,6 @@
 			
 		</td>
 		<td>{{ $page->category ? $page->category->name : "None" }} </td>
-		<td>{{ $page->country ? $page->country->name : "None" }}</td>
 		<td>
 			<small>
 				Created at: {{ $page->created_at }}<br />

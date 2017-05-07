@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'slug', 'email', 'role', 'password', 'picture', 'document', 'birthdate', 'gender', 'ocupation', 'peso_usual', 'country', 'city', 'address', 'phone', 'mobile', 'bio', 'cv', 'rank', 'lat', 'lng', 'confirmed', 'confirmation_code'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -32,4 +32,57 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+    public function diaries()
+    {
+        return $this->hasMany('App\Diary');
+    }
+    public function intolerances()
+    {
+        return $this->hasMany('App\Intolerance');
+    }
+    public function laboratories()
+    {
+        return $this->hasMany('App\Laboratory');
+    }
+    public function medicines()
+    {
+        return $this->hasMany('App\Medicine');
+    }
+    public function pathologies()
+    {
+        return $this->hasMany('App\Pathology');
+    }
+    public function payments()
+    {
+        return $this->hasMany('App\Payment');
+    }
+    public function plans()
+    {
+        return $this->hasMany('App\Plan');
+    }
+    public function profiles()
+    {
+        return $this->hasMany('App\Profile');
+    }
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
+    public function surgicals()
+    {
+        return $this->hasMany('App\Surgical');
+    }
+    public function ticekts()
+    {
+        return $this->hasMany('App\Ticket');
+    }
+    public function visits()
+    {
+        return $this->hasMany('App\Visit');
+    }
 }
