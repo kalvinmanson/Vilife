@@ -70,4 +70,10 @@ class WebController extends Controller
             return view('web/contact');
         }
     }
+
+    public function staff() { return view('web/staff'); }
+    public function my() { return view('web/my'); }
+    public function planes() { return view('web/planes'); }
+    public function consultas() { return view('web/consultas'); }
+    public function prices() { return view('web/prices'); }
 }

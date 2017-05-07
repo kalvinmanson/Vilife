@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Actualidad</a></li>
-        <li><a href="#">Staff Médico</a></li>
+        <li><a href="/staff">Staff Médico</a></li>
         <li><a href="#">Biblioteca Nutricional</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -42,15 +42,15 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Mi perfil <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/">Historia Clinica</a></li>
-            <li><a href="/">Planes de Alimentación</a></li>
-            <li><a href="/">Consultas</a></li>
+            <li><a href="/my">Historia Clinica</a></li>
+            <li><a href="/planes">Planes de Alimentación</a></li>
+            <li><a href="/consultas">Consultas</a></li>
             <li><a href="/">Visitas</a></li>
             <li><a href="/auth/logout">Salir</a></li>
           </ul>
         </li>
         @else
-        <li class="active"><a href="#">Planes y Precios</a></li>
+        <li class="active"><a href="/prices">Planes y Precios</a></li>
         <li><a href="/auth/login">Entrar</a></li>
         <li><a href="/auth/register">Crear Cuenta</a></li>
         @endif
